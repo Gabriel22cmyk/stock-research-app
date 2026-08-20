@@ -1,26 +1,28 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
 .header {
   text-align: center;
   margin-bottom: 40px;
-  border-bottom: 3px solid #0066cc;
-  padding-bottom: 20px;
+  border-bottom: 3px solid #2563eb;
+  padding-bottom: 30px;
 }
 
 .header h1 {
   margin: 0;
   font-size: 2.5em;
-  color: #0066cc;
+  color: #60a5fa;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .header p {
   margin: 10px 0 0 0;
-  color: #666;
+  color: #94a3b8;
   font-size: 1.1em;
 }
 
@@ -28,7 +30,7 @@
   display: flex;
   gap: 10px;
   margin-bottom: 30px;
-  border-bottom: 2px solid #eee;
+  border-bottom: 2px solid #1e3a5f;
 }
 
 .tab-btn {
@@ -39,16 +41,16 @@
   font-size: 1em;
   cursor: pointer;
   transition: all 0.3s;
-  color: #666;
+  color: #94a3b8;
 }
 
 .tab-btn:hover {
-  color: #0066cc;
+  color: #60a5fa;
 }
 
 .tab-btn.active {
-  color: #0066cc;
-  border-bottom-color: #0066cc;
+  color: #60a5fa;
+  border-bottom-color: #2563eb;
 }
 
 .stocks-grid {
@@ -65,5 +67,9 @@
 
   .header h1 {
     font-size: 2em;
+  }
+  
+  .container {
+    padding: 20px;
   }
 }
