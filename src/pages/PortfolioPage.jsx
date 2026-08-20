@@ -43,6 +43,11 @@ const PortfolioPage = () => {
 
   return (
     <div className="portfolio-container">
+      <header className="portfolio-header">
+        <h1>MY WEALTH</h1>
+        <p>Full picture of your investments, property and net worth</p>
+      </header>
+
       {/* Net Worth Summary */}
       <div className="net-worth-card">
         <h2>NET WORTH</h2>

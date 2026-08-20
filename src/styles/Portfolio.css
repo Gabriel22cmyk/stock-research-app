@@ -4,6 +4,30 @@
   padding: 40px 20px;
 }
 
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 3px solid #2563eb;
+}
+
+.portfolio-header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4em;
+  color: #60a5fa;
+  letter-spacing: 6px;
+  margin: 0 0 8px 0;
+  line-height: 1;
+}
+
+.portfolio-header p {
+  color: #94a3b8;
+  font-size: 1em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
 /* Net Worth Card */
 .net-worth-card {
   background: linear-gradient(135deg, #1a2744 0%, #0f1419 100%);

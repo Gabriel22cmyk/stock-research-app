@@ -1,16 +1,18 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import WatchlistPage from './pages/WatchlistPage';
 import PortfolioPage from './pages/PortfolioPage';
+import StocksPage from './pages/StocksPage';
+import WatchlistPage from './pages/WatchlistPage';
+import Nav from './components/Nav';
 import './App.css';
 
 function App() {
   return (
     <Router>
+      <Nav />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<PortfolioPage />} />
+        <Route path="/stocks" element={<StocksPage />} />
         <Route path="/watchlist" element={<WatchlistPage />} />
-        <Route path="/portfolio" element={<PortfolioPage />} />
       </Routes>
     </Router>
   );
