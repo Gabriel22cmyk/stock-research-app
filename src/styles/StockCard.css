@@ -1,0 +1,106 @@
+.stock-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stock-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 15px;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #0066cc;
+}
+
+.company-name {
+  margin: 5px 0 0 0;
+  color: #999;
+  font-size: 0.9em;
+}
+
+.watchlist-btn {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #ddd;
+}
+
+.watchlist-btn:hover {
+  transform: scale(1.2);
+}
+
+.watchlist-btn.active {
+  color: #ffc107;
+}
+
+.card-prices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 15px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 6px;
+}
+
+.price-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-item .label {
+  font-size: 0.8em;
+  color: #999;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.price-item .price {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #0066cc;
+}
+
+.price-item.positive .price {
+  color: #28a745;
+}
+
+.price-item.negative .price {
+  color: #dc3545;
+}
+
+.price-item.target {
+  color: #ffc107;
+}
+
+.view-btn {
+  width: 100%;
+  padding: 10px;
+  background: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: all 0.2s;
+}
+
+.view-btn:hover {
+  background: #0052a3;
+  transform: scale(1.02);
+}
