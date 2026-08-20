@@ -333,6 +333,14 @@
   font-style: italic;
 }
 
+.property-click-hint {
+  color: #2563eb;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin: 10px 0 0 0;
+  letter-spacing: 0.5px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .net-worth-amount {

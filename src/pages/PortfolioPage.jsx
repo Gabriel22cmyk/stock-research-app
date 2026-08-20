@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { fetchPortfolio, fetchProperties } from '../lib/supabaseClient';
+import PropertyDetail from '../components/PropertyDetail';
 import '../styles/Portfolio.css';
 
 const PortfolioPage = () => {
   const [portfolio, setPortfolio] = useState([]);
   const [properties, setProperties] = useState([]);
+  const [selectedProperty, setSelectedProperty] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -126,7 +128,7 @@ const PortfolioPage = () => {
 
         <div className="portfolio-grid">
           {properties.map(prop => (
-            <div key={prop.id} className="property-card">
+            <div key={prop.id} className="property-card" onClick={() => setSelectedProperty(prop)} style={{ cursor: 'pointer' }}>
               <div className="property-card-header">
                 <h4>{prop.property_name}</h4>
                 {prop.owned_outright && <span className="owned-badge">OWNED OUTRIGHT</span>}
@@ -150,10 +152,17 @@ const PortfolioPage = () => {
               </div>
 
               {prop.notes && <p className="property-notes">{prop.notes}</p>}
+              <p className="property-click-hint">Click for details →</p>
             </div>
           ))}
         </div>
       </div>
+      {selectedProperty && (
+        <PropertyDetail
+          property={selectedProperty}
+          onClose={() => setSelectedProperty(null)}
+        />
+      )}
     </div>
   );
 };

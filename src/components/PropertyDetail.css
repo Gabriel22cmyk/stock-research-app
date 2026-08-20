@@ -1,0 +1,228 @@
+.property-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.property-modal-content {
+  background: #1a2744;
+  border: 1px solid #2563eb;
+  border-radius: 16px;
+  padding: 35px;
+  max-width: 640px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.property-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.3em;
+  cursor: pointer;
+  color: #64748b;
+  transition: color 0.2s;
+}
+
+.property-close-btn:hover {
+  color: #60a5fa;
+}
+
+/* Header */
+.property-modal-header {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #1e3a5f;
+}
+
+.property-modal-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3em;
+  color: #60a5fa;
+  letter-spacing: 3px;
+  margin: 0 0 8px 0;
+}
+
+.owned-badge-large {
+  display: inline-block;
+  background: #064e3b;
+  color: #10b981;
+  border: 1px solid #10b981;
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+.property-modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.prop-tag {
+  background: #0f1419;
+  color: #94a3b8;
+  border: 1px solid #2d3748;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.78em;
+  font-weight: 500;
+}
+
+/* Sections */
+.property-modal-section {
+  margin-bottom: 28px;
+}
+
+.property-modal-section h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2em;
+  color: #60a5fa;
+  letter-spacing: 3px;
+  margin: 0 0 14px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #1e3a5f;
+}
+
+/* Stats Grid */
+.property-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.prop-stat-item {
+  background: #0f1419;
+  border: 1px solid #1e3a5f;
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.prop-stat-label {
+  font-size: 0.7em;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.prop-stat-value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6em;
+  letter-spacing: 1px;
+  color: #f0f4f8;
+}
+
+.prop-stat-value.positive { color: #10b981; }
+.prop-stat-value.negative { color: #ef4444; }
+.prop-stat-value.highlight { color: #fbbf24; }
+
+/* Cashflow */
+.cashflow-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cashflow-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.cashflow-item.income {
+  background: #064e3b;
+  border: 1px solid #10b981;
+}
+
+.cashflow-item.outgoing {
+  background: #450a0a;
+  border: 1px solid #ef4444;
+}
+
+.cashflow-item.net-positive {
+  background: #1a2744;
+  border: 2px solid #2563eb;
+}
+
+.cashflow-item.net-negative {
+  background: #450a0a;
+  border: 2px solid #ef4444;
+}
+
+.cashflow-label {
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #94a3b8;
+}
+
+.cashflow-amount {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  color: #f0f4f8;
+}
+
+.cashflow-item.income .cashflow-amount { color: #10b981; }
+.cashflow-item.outgoing .cashflow-amount { color: #ef4444; }
+.cashflow-item.net-positive .cashflow-amount { color: #60a5fa; }
+
+/* Coming Soon */
+.coming-soon {
+  opacity: 0.6;
+}
+
+.coming-soon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+.coming-soon-item {
+  background: #0f1419;
+  border: 1px dashed #2d3748;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.82em;
+  color: #64748b;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .property-modal-content {
+    padding: 24px 18px;
+  }
+
+  .property-modal-header h2 {
+    font-size: 2.2em;
+  }
+}
