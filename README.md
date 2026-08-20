@@ -1,16 +1,79 @@
-# React + Vite
+# 📈 Stock Research Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern web app to track stock picks, build watchlists, and stay on top of market opportunities.
 
-Currently, two official plugins are available:
+**Built with:** React + Supabase + Vercel
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🎯 Features
 
-## React Compiler
+✅ **Latest Stock Picks** - See recommended stocks with current & target prices  
+✅ **Watchlist** - Save and track your favorite stocks  
+✅ **Price Tracking** - View historical price data  
+✅ **Recommendations** - Read analyst ratings and insights  
+✅ **Real-time Updates** - Prices sync with your Supabase database  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Quick Start
 
-## Expanding the Oxlint configuration
+### Run Locally
+```bash
+npm install
+npm run dev
+```
+Visit http://localhost:5173
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### Deploy to Vercel
+```bash
+git push  # Push to GitHub first
+```
+Then connect your repo in Vercel dashboard. Auto-deploys on every push!
+
+## 📊 Database
+
+Uses Supabase PostgreSQL. Tables:
+- `stocks` - Stock picks
+- `watchlist` - User watchlist
+- `recommendations` - Buy/sell ratings
+- `price_history` - Historical prices
+
+See `DEPLOYMENT.md` for full setup guide.
+
+## 📁 Project Structure
+
+```
+src/
+├── components/     # Reusable React components
+├── pages/          # Page components (Home, Watchlist)
+├── lib/            # Supabase client & utilities
+├── styles/         # CSS
+└── App.jsx         # Router & main app
+```
+
+## 🔧 Tech Stack
+
+| Layer | Tech |
+|-------|------|
+| Frontend | React 18 + Vite |
+| Backend | Supabase (PostgreSQL) |
+| Hosting | Vercel |
+| Styling | CSS3 |
+
+## 📚 Learn More
+
+- [React Docs](https://react.dev)
+- [Supabase Guide](https://supabase.com/docs)
+- [Vercel Deploy](https://vercel.com/docs)
+- See `DEPLOYMENT.md` for detailed setup
+
+## 🎓 For Gabriel
+
+This project is built to teach you full-stack development:
+- **Frontend**: React components, hooks, routing
+- **Backend**: Database design, APIs, real-time sync
+- **DevOps**: Git, GitHub, continuous deployment
+
+Start small, iterate fast, ship often. You've got this! 🚀
+
+---
+
+**Status**: Live on Vercel  
+**Last Updated**: 2026-08-20
