@@ -53,6 +53,9 @@ const HomePage = () => {
         <button className="tab-btn" onClick={() => window.location.href = '/watchlist'}>
           Watchlist ({watchlist.length})
         </button>
+        <button className="tab-btn" onClick={() => window.location.href = '/portfolio'}>
+          Portfolio
+        </button>
       </div>
 
       <section className="stocks-grid">

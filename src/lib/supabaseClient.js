@@ -86,3 +86,30 @@ export const fetchPriceHistory = async (stockId) => {
   }
   return data || [];
 };
+
+export const fetchPortfolio = async () => {
+  const { data, error } = await supabase
+    .from('portfolio')
+    .select('*')
+    .eq('user_id', 'gabriel')
+    .order('current_value', { ascending: false });
+  
+  if (error) {
+    console.error('Error fetching portfolio:', error);
+    return [];
+  }
+  return data || [];
+};
+
+export const fetchProperties = async () => {
+  const { data, error } = await supabase
+    .from('properties')
+    .select('*')
+    .eq('user_id', 'gabriel');
+  
+  if (error) {
+    console.error('Error fetching properties:', error);
+    return [];
+  }
+  return data || [];
+};
