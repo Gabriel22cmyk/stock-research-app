@@ -54,8 +54,9 @@
 .modal-content h2 {
   margin: 0 0 30px 0;
   color: #60a5fa;
-  font-size: 2em;
-  font-weight: 700;
+  font-size: 3em;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 3px;
 }
 
 .detail-section {
@@ -67,7 +68,11 @@
   color: #60a5fa;
   border-bottom: 2px solid #2563eb;
   padding-bottom: 10px;
-  font-size: 1.2em;
+  font-size: 1.1em;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 .detail-grid {
