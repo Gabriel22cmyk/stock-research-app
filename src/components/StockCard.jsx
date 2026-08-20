@@ -3,7 +3,7 @@ import '../styles/StockCard.css';
 
 const StockCard = ({ stock, isWatchlisted, onAddWatchlist, onRemoveWatchlist, onViewDetails }) => {
   const priceChange = stock.target_price - stock.current_price;
-  const percentChange = ((priceChange / stock.current_price) * 100).toFixed(2);
+  const percentChange = ((priceChange / stock.current_price) * 100).toFixed(1);
 
   return (
     <div className="stock-card">
@@ -11,6 +11,7 @@ const StockCard = ({ stock, isWatchlisted, onAddWatchlist, onRemoveWatchlist, on
         <div>
           <h3>{stock.symbol}</h3>
           <p className="company-name">{stock.company_name}</p>
+          {stock.sector && <span className="card-sector">{stock.sector}</span>}
         </div>
         <button
           className={`watchlist-btn ${isWatchlisted ? 'active' : ''}`}
@@ -19,6 +20,10 @@ const StockCard = ({ stock, isWatchlisted, onAddWatchlist, onRemoveWatchlist, on
           {isWatchlisted ? '★' : '☆'}
         </button>
       </div>
+
+      {stock.description && (
+        <p className="card-description">{stock.description}</p>
+      )}
 
       <div className="card-prices">
         <div className="price-item">
@@ -30,13 +35,27 @@ const StockCard = ({ stock, isWatchlisted, onAddWatchlist, onRemoveWatchlist, on
           <span className="price target">${stock.target_price?.toFixed(2) || 'N/A'}</span>
         </div>
         <div className={`price-item ${priceChange >= 0 ? 'positive' : 'negative'}`}>
-          <span className="label">Potential</span>
-          <span className="price">{percentChange}%</span>
+          <span className="label">Upside</span>
+          <span className="price">{priceChange >= 0 ? '+' : ''}{percentChange}%</span>
         </div>
       </div>
 
+      {stock.upcoming_events && (
+        <div className="card-event">
+          <span className="event-label">⚡ Upcoming</span>
+          <span className="event-text">{stock.upcoming_events}</span>
+        </div>
+      )}
+
+      {stock.founded_year && (
+        <div className="card-meta">
+          <span>🏛 Founded {stock.founded_year}</span>
+          {stock.available_on && <span>🏦 {stock.available_on}</span>}
+        </div>
+      )}
+
       <button className="view-btn" onClick={() => onViewDetails(stock)}>
-        View Details
+        Full Details →
       </button>
     </div>
   );
