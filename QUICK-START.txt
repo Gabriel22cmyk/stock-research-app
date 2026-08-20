@@ -1,0 +1,163 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                 STOCK RESEARCH APP - QUICK START                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+👋 Hi Gabriel! Your app is ready. Follow these 3 steps:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 1: SET UP DATABASE (5 min)
+───────────────────────────────
+
+1. Go to: https://supabase.com (login/signup)
+2. Open your project: https://zzztwmicedxnqcuvhpxk.supabase.co
+3. Click SQL Editor on the left
+4. Click "New Query"
+5. Open the file: supabase-setup.sql (in this folder)
+6. Copy ALL the SQL code
+7. Paste it into the SQL Editor in Supabase
+8. Click the green "Run" button
+
+Done! ✅ Your database is set up.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 2: TEST LOCALLY (5 min)
+────────────────────────────
+
+Run these commands:
+
+  npm run dev
+
+Then open: http://localhost:5173
+
+You should see 5 stocks on the page!
+Click "View Details" - see recommendations
+Click the star - add to watchlist
+Click "Watchlist" tab - see saved stocks
+
+Everything working? Great! 🎉
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 3: DEPLOY TO VERCEL (5 min)
+─────────────────────────────────
+
+1. Create a FREE GitHub account: https://github.com/signup
+
+2. In this folder, run:
+   git remote add origin https://github.com/YOUR_USERNAME/stock-research-app.git
+   git branch -M main
+   git push -u origin main
+
+3. Go to Vercel: https://vercel.com
+
+4. Click "New Project" → "Import Git Repository"
+
+5. Paste your GitHub URL from step 2
+
+6. Click "Import" then "Deploy"
+
+Wait 60 seconds... and BOOM! 🚀 Your app is live on the internet!
+
+Vercel will give you a URL like:
+   https://stock-research-app-abc123.vercel.app
+
+That's your live app! Send the link to anyone!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TECH STACK (What You Built)
+───────────────────────────
+
+Frontend:     React + Vite (super fast)
+Backend:      Supabase (database & API)
+Hosting:      Vercel (auto-deploys when you push to GitHub)
+Database:     PostgreSQL (managed by Supabase)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MAKING CHANGES (After Deployed)
+────────────────────────────────
+
+Every time you make a change:
+
+  git add .
+  git commit -m "Description of your change"
+  git push
+
+Vercel AUTOMATICALLY deploys! No manual upload. Just push and it's live.
+
+It's like magic. 🪄
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+IMPORTANT FILES
+───────────────
+
+GETTING-STARTED.md      ← Read this first (complete guide)
+SETUP-DATABASE.md       ← Database setup details
+VERCEL-DEPLOY.md        ← Deployment details
+DEPLOYMENT.md           ← How to add features later
+README.md               ← Project overview
+
+Code is in: src/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+USEFUL COMMANDS
+───────────────
+
+npm run dev         ← Start development server locally
+npm run build       ← Test production build
+npm install         ← Install dependencies (if needed)
+git push            ← Deploy to Vercel (after setup)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CREDENTIALS (Already Configured)
+─────────────────────────────────
+
+Supabase URL:  https://zzztwmicedxnqcuvhpxk.supabase.co
+Supabase Key:  sb_publishable_bPUO0NkmzLcmR1fsHXqqGA_He3uqNXG
+
+These are embedded in the code. No manual setup needed! ✨
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TROUBLESHOOTING
+───────────────
+
+Problem: Blank page / Nothing shows up
+→ Open DevTools (F12) → Console tab → look for red errors
+
+Problem: Can't connect to database
+→ Run: node test-supabase.js
+→ Follow SETUP-DATABASE.md again
+
+Problem: "npm: command not found"
+→ You need Node.js: https://nodejs.org/
+→ Install it, then try again
+
+Problem: Vercel won't deploy
+→ Check you pushed to GitHub first!
+→ Check Vercel dashboard → Deployments → see the error logs
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+WHAT YOU'VE BUILT
+─────────────────
+
+✅ Full-stack web app
+✅ React frontend with routing & components
+✅ PostgreSQL database with 4 tables
+✅ Supabase API integration
+✅ Continuous deployment pipeline
+
+That's real development. You did that. 🔥
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+READY? Start with STEP 1 above. You got this! 🚀
+
+Questions? Read GETTING-STARTED.md for the full guide with explanations.
