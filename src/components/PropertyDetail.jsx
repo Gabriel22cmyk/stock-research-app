@@ -112,16 +112,100 @@ const PropertyDetail = ({ property, onClose }) => {
           </div>
         </div>
 
-        {/* Coming Soon */}
-        <div className="property-modal-section coming-soon">
-          <h3>COMING SOON</h3>
-          <div className="coming-soon-grid">
-            <div className="coming-soon-item">👤 Tenant details</div>
-            <div className="coming-soon-item">📅 Lease end date</div>
-            <div className="coming-soon-item">🔧 Maintenance log</div>
-            <div className="coming-soon-item">📊 Value history</div>
+        {/* Property Information */}
+        {property.completion_date && (
+          <div className="property-modal-section">
+            <h3>PROPERTY INFO</h3>
+            <div className="info-row">
+              <span className="info-label">📅 Completion Date</span>
+              <span className="info-value">{property.completion_date}</span>
+            </div>
           </div>
-        </div>
+        )}
+
+        {/* Council Tax */}
+        {property.council_tax_contact && (
+          <div className="property-modal-section">
+            <h3>COUNCIL TAX</h3>
+            <div className="contact-block">
+              <a href={`tel:${property.council_tax_contact.replace(/\s/g, '')}`} className="contact-link">
+                📞 {property.council_tax_contact}
+              </a>
+              {property.council_tax_authority && (
+                <p className="contact-note">{property.council_tax_authority}</p>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Utilities */}
+        {(property.electricity_provider || property.gas_provider || property.water_provider) && (
+          <div className="property-modal-section">
+            <h3>UTILITIES</h3>
+            <div className="utilities-list">
+              {property.electricity_provider && (
+                <div className="utility-item">
+                  <div className="utility-header">
+                    <span className="utility-icon">⚡</span>
+                    <span className="utility-name">Electricity</span>
+                  </div>
+                  <div className="utility-details">
+                    <p className="utility-provider">{property.electricity_provider}</p>
+                    {property.electricity_serial && (
+                      <p className="utility-serial">Serial: {property.electricity_serial}</p>
+                    )}
+                    {property.electricity_contact && (
+                      <a href={`tel:${property.electricity_contact.replace(/\s/g, '')}`} className="utility-contact">
+                        📞 {property.electricity_contact}
+                      </a>
+                    )}
+                  </div>
+                </div>
+              )}
+              {property.gas_provider && (
+                <div className="utility-item">
+                  <div className="utility-header">
+                    <span className="utility-icon">🔥</span>
+                    <span className="utility-name">Gas</span>
+                  </div>
+                  <div className="utility-details">
+                    <p className="utility-provider">{property.gas_provider}</p>
+                    {property.gas_serial && (
+                      <p className="utility-serial">Serial: {property.gas_serial}</p>
+                    )}
+                    {property.gas_contact && (
+                      <a href={`tel:${property.gas_contact.replace(/\s/g, '')}`} className="utility-contact">
+                        📞 {property.gas_contact}
+                      </a>
+                    )}
+                  </div>
+                </div>
+              )}
+              {property.water_provider && (
+                <div className="utility-item">
+                  <div className="utility-header">
+                    <span className="utility-icon">💧</span>
+                    <span className="utility-name">Water</span>
+                  </div>
+                  <div className="utility-details">
+                    <p className="utility-provider">{property.water_provider}</p>
+                    {property.water_contact && (
+                      <a href={`tel:${property.water_contact.replace(/\s/g, '')}`} className="utility-contact">
+                        📞 {property.water_contact}
+                      </a>
+                    )}
+                    {property.water_reference && (
+                      <p className="utility-serial">Reference: {property.water_reference}</p>
+                    )}
+                    {property.water_serial && (
+                      <p className="utility-serial">Serial: {property.water_serial}</p>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

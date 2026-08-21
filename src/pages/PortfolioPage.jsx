@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { fetchPortfolio, fetchProperties } from '../lib/supabaseClient';
-import PropertyDetail from '../components/PropertyDetail';
 import '../styles/Portfolio.css';
 
 const PortfolioPage = () => {
+  const navigate = useNavigate();
   const [portfolio, setPortfolio] = useState([]);
   const [properties, setProperties] = useState([]);
-  const [selectedProperty, setSelectedProperty] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -98,7 +98,7 @@ const PortfolioPage = () => {
 
         <div className="portfolio-grid">
           {properties.map(prop => (
-            <div key={prop.id} className="property-card" onClick={() => setSelectedProperty(prop)} style={{ cursor: 'pointer' }}>
+            <div key={prop.id} className="property-card" onClick={() => navigate(`/property/${prop.id}`)} style={{ cursor: 'pointer' }}>
               <div className="property-card-header">
                 <h4>{prop.property_name}</h4>
                 {prop.owned_outright && <span className="owned-badge">OWNED OUTRIGHT</span>}
@@ -127,12 +127,6 @@ const PortfolioPage = () => {
           ))}
         </div>
       </div>
-      {selectedProperty && (
-        <PropertyDetail
-          property={selectedProperty}
-          onClose={() => setSelectedProperty(null)}
-        />
-      )}
     </div>
   );
 };

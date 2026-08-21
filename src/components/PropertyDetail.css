@@ -243,25 +243,132 @@
 .cashflow-item.outgoing .cashflow-amount { color: #ef4444; }
 .cashflow-item.net-positive .cashflow-amount { color: #60a5fa; }
 
-/* Coming Soon */
-.coming-soon {
-  opacity: 0.6;
-}
-
-.coming-soon-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 10px;
-}
-
-.coming-soon-item {
+/* Property Info */
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
   background: #0f1419;
-  border: 1px dashed #2d3748;
   border-radius: 8px;
-  padding: 10px 14px;
-  font-size: 0.82em;
+  font-size: 0.9em;
+}
+
+.info-label {
   color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  letter-spacing: 1px;
+}
+
+.info-value {
+  color: #f0f4f8;
   font-weight: 500;
+}
+
+/* Contact Block */
+.contact-block {
+  background: #0f1419;
+  border: 1px solid #2d3748;
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95em;
+  transition: color 0.2s;
+}
+
+.contact-link:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+.contact-note {
+  margin: 8px 0 0 0;
+  font-size: 0.85em;
+  color: #64748b;
+}
+
+/* Utilities */
+.utilities-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.utility-item {
+  background: #0f1419;
+  border: 1px solid #2d3748;
+  border-radius: 8px;
+  padding: 12px;
+  overflow: hidden;
+}
+
+.utility-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #1e3a5f;
+}
+
+.utility-icon {
+  font-size: 1.3em;
+}
+
+.utility-name {
+  font-weight: 700;
+  color: #f0f4f8;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 1px;
+}
+
+.utility-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.utility-provider {
+  margin: 0;
+  font-weight: 600;
+  color: #60a5fa;
+  font-size: 0.9em;
+}
+
+.utility-serial {
+  margin: 0;
+  font-size: 0.8em;
+  color: #64748b;
+  font-family: 'Courier New', monospace;
+  word-break: break-all;
+}
+
+.utility-contact {
+  margin-top: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #60a5fa;
+  text-decoration: none;
+  font-size: 0.85em;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.utility-contact:hover {
+  color: #93c5fd;
+  text-decoration: underline;
 }
 
 @media (max-width: 600px) {

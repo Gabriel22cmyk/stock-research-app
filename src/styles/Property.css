@@ -1,0 +1,340 @@
+.property-page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #60a5fa;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 30px;
+  transition: color 0.2s;
+  padding: 8px 12px;
+}
+
+.back-btn:hover {
+  color: #93c5fd;
+}
+
+/* Header */
+.property-page-header {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 3px solid #2563eb;
+}
+
+.property-page-header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5em;
+  color: #60a5fa;
+  letter-spacing: 3px;
+  margin: 0 0 12px 0;
+  line-height: 1;
+}
+
+.owned-badge {
+  display: inline-block;
+  background: #064e3b;
+  color: #10b981;
+  border: 1px solid #10b981;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+.property-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.badge {
+  background: #1a2744;
+  color: #94a3b8;
+  border: 1px solid #2563eb;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+/* Sections */
+.property-section {
+  margin-bottom: 35px;
+}
+
+.property-section h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8em;
+  color: #60a5fa;
+  letter-spacing: 2px;
+  margin: 0 0 18px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #1e3a5f;
+}
+
+/* Address Block */
+.address-block {
+  background: #1a2744;
+  border: 1px solid #2563eb;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.address-line {
+  margin: 0 0 8px 0;
+  font-size: 1.05em;
+  color: #f0f4f8;
+  line-height: 1.6;
+}
+
+.address-line:last-child {
+  margin-bottom: 0;
+}
+
+.postcode {
+  font-weight: 700;
+  color: #60a5fa;
+  font-family: 'Courier New', monospace;
+  font-size: 1.1em;
+  margin-top: 12px;
+}
+
+/* Info Block */
+.info-block {
+  background: #1a2744;
+  border: 1px solid #2563eb;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.manager-name {
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #f0f4f8;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #1e3a5f;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+}
+
+.info-value {
+  color: #f0f4f8;
+  font-weight: 500;
+  font-size: 1.05em;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.stat-card {
+  background: #1a2744;
+  border: 1px solid #2563eb;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stat-label {
+  font-size: 0.8em;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2em;
+  letter-spacing: 1px;
+  color: #f0f4f8;
+}
+
+.stat-value.positive { color: #10b981; }
+.stat-value.negative { color: #ef4444; }
+.stat-value.highlight { color: #fbbf24; }
+
+/* Cashflow */
+.cashflow-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cashflow-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.cashflow-row.income {
+  background: #064e3b;
+  border: 1px solid #10b981;
+}
+
+.cashflow-row.outgoing {
+  background: #450a0a;
+  border: 1px solid #ef4444;
+}
+
+.cashflow-row.net-positive {
+  background: #1a2744;
+  border: 2px solid #2563eb;
+}
+
+.cashflow-row.net-negative {
+  background: #450a0a;
+  border: 2px solid #ef4444;
+}
+
+.cf-label {
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #94a3b8;
+}
+
+.cf-amount {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4em;
+  letter-spacing: 1px;
+  color: #f0f4f8;
+}
+
+.cashflow-row.income .cf-amount { color: #10b981; }
+.cashflow-row.outgoing .cf-amount { color: #ef4444; }
+.cashflow-row.net-positive .cf-amount { color: #60a5fa; }
+
+/* Contact Link */
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1em;
+  transition: color 0.2s;
+  margin-bottom: 8px;
+}
+
+.contact-link:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+.contact-note {
+  margin: 8px 0 0 0;
+  font-size: 0.85em;
+  color: #64748b;
+}
+
+/* Utilities Grid */
+.utilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.utility-card {
+  background: #1a2744;
+  border: 1px solid #2563eb;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.utility-header {
+  background: linear-gradient(135deg, #0f1419 0%, #1a2744 100%);
+  border-bottom: 2px solid #2563eb;
+  padding: 14px 16px;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #60a5fa;
+  letter-spacing: 1px;
+}
+
+.utility-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.utility-provider {
+  margin: 0;
+  font-weight: 600;
+  color: #f0f4f8;
+  font-size: 0.95em;
+}
+
+.utility-serial {
+  margin: 0;
+  font-size: 0.8em;
+  color: #64748b;
+  font-family: 'Courier New', monospace;
+  word-break: break-all;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .property-page-header h1 {
+    font-size: 2.5em;
+  }
+
+  .property-section h2 {
+    font-size: 1.4em;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .utilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cashflow-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .cf-amount {
+    align-self: flex-end;
+  }
+}

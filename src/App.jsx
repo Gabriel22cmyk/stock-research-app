@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PortfolioPage from './pages/PortfolioPage';
+import PropertyPage from './pages/PropertyPage';
 import NetWorthPage from './pages/NetWorthPage';
 import StocksPage from './pages/StocksPage';
 import WatchlistPage from './pages/WatchlistPage';
@@ -12,6 +13,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<PortfolioPage />} />
+        <Route path="/property/:id" element={<PropertyPage />} />
         <Route path="/networth" element={<NetWorthPage />} />
         <Route path="/stocks" element={<StocksPage />} />
         <Route path="/watchlist" element={<WatchlistPage />} />
