@@ -7,16 +7,14 @@ const Nav = () => {
   const navigate = useNavigate();
 
   const tabs = [
-    { label: 'Portfolio', path: '/', icon: '💼' },
+    { label: 'Properties', path: '/', icon: '🏠' },
     { label: 'Net Worth', path: '/networth', icon: '💰' },
-    { label: 'Stocks', path: '/stocks', icon: '📈' },
-    { label: 'Watchlist', path: '/watchlist', icon: '⭐' },
   ];
 
   return (
     <nav className="main-nav">
       <div className="nav-logo" onClick={() => navigate('/')}>
-        <span className="logo-text">WEALTH</span>
+        <span className="logo-text">PROPERTY</span>
         <span className="logo-sub">by Cayde</span>
       </div>
       <div className="nav-tabs">
