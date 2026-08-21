@@ -1,14 +1,21 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useAuth } from '../lib/AuthContext';
 import './Nav.css';
 
 const Nav = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const { user, signOut } = useAuth();
 
   const tabs = [
     { label: 'Properties', path: '/', icon: '🏠' },
   ];
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate('/login');
+  };
 
   return (
     <nav className="main-nav">
@@ -27,6 +34,12 @@ const Nav = () => {
             <span className="tab-label">{tab.label}</span>
           </button>
         ))}
+        {user && (
+          <button className="nav-signout" onClick={handleSignOut} title={user.email}>
+            <span className="tab-icon">🚪</span>
+            <span className="tab-label">Sign out</span>
+          </button>
+        )}
       </div>
     </nav>
   );
