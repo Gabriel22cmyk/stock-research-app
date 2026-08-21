@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { fetchProperties } from '../lib/supabaseClient';
 import FileSection from '../components/FileSection';
+import EditableSection from '../components/EditableSection';
 import '../styles/Property.css';
 
 const PropertyPage = () => {
@@ -72,15 +73,15 @@ const PropertyPage = () => {
         </section>
       )}
 
-      {/* Management */}
-      {property.management_company && (
-        <section className="property-section">
-          <h2>MANAGEMENT</h2>
-          <div className="info-block">
-            <p className="manager-name">{property.management_company}</p>
-          </div>
-        </section>
-      )}
+      {/* Management - Editable */}
+      <EditableSection
+        propertyId={property.id}
+        title="MANAGEMENT"
+        fields={{
+          management_company: property.management_company || ''
+        }}
+        onUpdate={(data) => setProperty(prev => ({ ...prev, ...data }))}
+      />
 
       {/* Valuation */}
       <section className="property-section">
@@ -153,33 +154,26 @@ const PropertyPage = () => {
         </div>
       </section>
 
-      {/* Property Info */}
-      {property.completion_date && (
-        <section className="property-section">
-          <h2>PROPERTY INFO</h2>
-          <div className="info-block">
-            <div className="info-row">
-              <span className="info-label">📅 Completion Date</span>
-              <span className="info-value">{property.completion_date}</span>
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Property Info - Editable */}
+      <EditableSection
+        propertyId={property.id}
+        title="PROPERTY INFO"
+        fields={{
+          completion_date: property.completion_date || ''
+        }}
+        onUpdate={(data) => setProperty(prev => ({ ...prev, ...data }))}
+      />
 
-      {/* Council Tax */}
-      {property.council_tax_contact && (
-        <section className="property-section">
-          <h2>COUNCIL TAX</h2>
-          <div className="info-block">
-            <a href={`tel:${property.council_tax_contact.replace(/\s/g, '')}`} className="contact-link">
-              📞 {property.council_tax_contact}
-            </a>
-            {property.council_tax_authority && (
-              <p className="contact-note">{property.council_tax_authority}</p>
-            )}
-          </div>
-        </section>
-      )}
+      {/* Council Tax - Editable */}
+      <EditableSection
+        propertyId={property.id}
+        title="COUNCIL TAX"
+        fields={{
+          council_tax_contact: property.council_tax_contact || '',
+          council_tax_authority: property.council_tax_authority || ''
+        }}
+        onUpdate={(data) => setProperty(prev => ({ ...prev, ...data }))}
+      />
 
       {/* Documents & Files */}
       <section className="property-section">
@@ -192,65 +186,24 @@ const PropertyPage = () => {
         </div>
       </section>
 
-      {/* Utilities */}
-      {(property.electricity_provider || property.gas_provider || property.water_provider) && (
-        <section className="property-section">
-          <h2>UTILITIES</h2>
-          <div className="utilities-grid">
-            {property.electricity_provider && (
-              <div className="utility-card">
-                <div className="utility-header">⚡ Electricity</div>
-                <div className="utility-body">
-                  <p className="utility-provider">{property.electricity_provider}</p>
-                  {property.electricity_serial && (
-                    <p className="utility-serial">Serial: {property.electricity_serial}</p>
-                  )}
-                  {property.electricity_contact && (
-                    <a href={`tel:${property.electricity_contact.replace(/\s/g, '')}`} className="contact-link">
-                      📞 {property.electricity_contact}
-                    </a>
-                  )}
-                </div>
-              </div>
-            )}
-            {property.gas_provider && (
-              <div className="utility-card">
-                <div className="utility-header">🔥 Gas</div>
-                <div className="utility-body">
-                  <p className="utility-provider">{property.gas_provider}</p>
-                  {property.gas_serial && (
-                    <p className="utility-serial">Serial: {property.gas_serial}</p>
-                  )}
-                  {property.gas_contact && (
-                    <a href={`tel:${property.gas_contact.replace(/\s/g, '')}`} className="contact-link">
-                      📞 {property.gas_contact}
-                    </a>
-                  )}
-                </div>
-              </div>
-            )}
-            {property.water_provider && (
-              <div className="utility-card">
-                <div className="utility-header">💧 Water</div>
-                <div className="utility-body">
-                  <p className="utility-provider">{property.water_provider}</p>
-                  {property.water_contact && (
-                    <a href={`tel:${property.water_contact.replace(/\s/g, '')}`} className="contact-link">
-                      📞 {property.water_contact}
-                    </a>
-                  )}
-                  {property.water_reference && (
-                    <p className="utility-serial">Reference: {property.water_reference}</p>
-                  )}
-                  {property.water_serial && (
-                    <p className="utility-serial">Serial: {property.water_serial}</p>
-                  )}
-                </div>
-              </div>
-            )}
-          </div>
-        </section>
-      )}
+      {/* Utilities - Editable */}
+      <EditableSection
+        propertyId={property.id}
+        title="UTILITIES"
+        fields={{
+          electricity_provider: property.electricity_provider || '',
+          electricity_serial: property.electricity_serial || '',
+          electricity_contact: property.electricity_contact || '',
+          gas_provider: property.gas_provider || '',
+          gas_serial: property.gas_serial || '',
+          gas_contact: property.gas_contact || '',
+          water_provider: property.water_provider || '',
+          water_contact: property.water_contact || '',
+          water_reference: property.water_reference || '',
+          water_serial: property.water_serial || ''
+        }}
+        onUpdate={(data) => setProperty(prev => ({ ...prev, ...data }))}
+      />
     </div>
   );
 };

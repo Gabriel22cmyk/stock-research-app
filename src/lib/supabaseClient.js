@@ -18,6 +18,20 @@ export const fetchProperties = async () => {
   return data || [];
 };
 
+export const updateProperty = async (propertyId, updates) => {
+  const { data, error } = await supabase
+    .from('properties')
+    .update(updates)
+    .eq('id', propertyId)
+    .select();
+
+  if (error) {
+    console.error('Error updating property:', error);
+    throw error;
+  }
+  return data?.[0] || null;
+};
+
 /* ===== File Storage ===== */
 
 const BUCKET = 'property-files';

@@ -1,0 +1,191 @@
+.section-header-with-edit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-header-with-edit h2 {
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5em;
+  color: #60a5fa;
+  letter-spacing: 2.5px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #1e3a5f;
+  flex: 1;
+}
+
+.edit-btn {
+  background: none;
+  border: 1px solid #2563eb;
+  color: #60a5fa;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: 600;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.edit-btn:hover {
+  background: rgba(37, 99, 235, 0.1);
+  border-color: #60a5fa;
+}
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 14px;
+  background: #0f1419;
+  border: 1px solid #1e3a5f;
+  border-radius: 8px;
+}
+
+.info-label {
+  font-size: 0.85em;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  min-width: 120px;
+}
+
+.info-value {
+  color: #f0f4f8;
+  font-size: 0.95em;
+  text-align: right;
+  flex: 1;
+}
+
+.property-section.editing {
+  background: #1a2744;
+  border: 2px solid #2563eb;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.75em;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+.form-group input {
+  background: #0f1419;
+  border: 1px solid #2d3748;
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #f0f4f8;
+  font-size: 0.95em;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.form-group input::placeholder {
+  color: #4b5563;
+}
+
+.form-error {
+  background: #450a0a;
+  border: 1px solid #ef4444;
+  color: #fca5a5;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.85em;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.form-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.form-btn.save {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.form-btn.save:hover:not(:disabled) {
+  background: #059669;
+}
+
+.form-btn.cancel {
+  background: #4b5563;
+  color: #f0f4f8;
+}
+
+.form-btn.cancel:hover:not(:disabled) {
+  background: #64748b;
+}
+
+.form-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .section-header-with-edit {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .section-header-with-edit h2 {
+    order: 1;
+  }
+
+  .edit-btn {
+    order: 2;
+    width: 100%;
+  }
+
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info-value {
+    text-align: left;
+  }
+}
