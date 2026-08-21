@@ -22,6 +22,7 @@ const PortfolioPage = () => {
   const totalPropertyEquity = properties.reduce((sum, p) => sum + (p.equity || 0), 0);
   const totalMortgage = properties.reduce((sum, p) => sum + (p.mortgage_remaining || 0), 0);
   const totalMonthlyIncome = properties.reduce((sum, p) => sum + (p.monthly_income || 0), 0);
+  const totalMonthlyMortgage = properties.reduce((sum, p) => sum + (p.monthly_mortgage || 0), 0);
 
   if (loading) {
     return (
@@ -53,8 +54,14 @@ const PortfolioPage = () => {
         </div>
         <div className="summary-tile">
           <span className="summary-label">Monthly Income</span>
-          <span className="summary-value income">£{totalMonthlyIncome.toLocaleString('en-GB')}</span>
+          <span className="summary-value income">£{totalMonthlyIncome.toLocaleString('en-GB', { minimumFractionDigits: 2 })}</span>
         </div>
+        {totalMonthlyMortgage > 0 && (
+          <div className="summary-tile">
+            <span className="summary-label">Monthly Mortgage</span>
+            <span className="summary-value mortgage">£{totalMonthlyMortgage.toLocaleString('en-GB', { minimumFractionDigits: 2 })}</span>
+          </div>
+        )}
         {totalMortgage > 0 && (
           <div className="summary-tile">
             <span className="summary-label">Total Mortgage</span>
