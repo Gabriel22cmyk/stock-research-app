@@ -26,6 +26,17 @@ const PropertyDetail = ({ property, onClose }) => {
             {property.bedrooms && <span className="prop-tag">🛏 {property.bedrooms} bed</span>}
             {property.location && <span className="prop-tag">📍 {property.location}</span>}
           </div>
+          {(property.address || property.postcode) && (
+            <div className="property-modal-address">
+              {property.address && <p>{property.address}</p>}
+              {property.postcode && <p className="postcode">{property.postcode}</p>}
+            </div>
+          )}
+          {property.management_company && (
+            <div className="property-modal-manager">
+              <span>Managed by:</span> {property.management_company}
+            </div>
+          )}
         </div>
 
         {/* Valuation */}
@@ -105,8 +116,6 @@ const PropertyDetail = ({ property, onClose }) => {
         <div className="property-modal-section coming-soon">
           <h3>COMING SOON</h3>
           <div className="coming-soon-grid">
-            <div className="coming-soon-item">📍 Location & map</div>
-            <div className="coming-soon-item">🏢 Management company</div>
             <div className="coming-soon-item">👤 Tenant details</div>
             <div className="coming-soon-item">📅 Lease end date</div>
             <div className="coming-soon-item">🔧 Maintenance log</div>

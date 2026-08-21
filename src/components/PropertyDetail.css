@@ -91,6 +91,53 @@
   font-weight: 500;
 }
 
+/* Property Address */
+.property-modal-address {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: #0f1419;
+  border-left: 3px solid #2563eb;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.property-modal-address p {
+  margin: 4px 0;
+}
+
+.property-modal-address .postcode {
+  font-weight: 600;
+  color: #60a5fa;
+  font-family: 'Courier New', monospace;
+  margin-top: 6px;
+}
+
+/* Management Company */
+.property-modal-manager {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: #1e3a5f;
+  border: 1px solid #2563eb;
+  border-radius: 8px;
+  font-size: 0.9em;
+}
+
+.property-modal-manager span {
+  color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.property-modal-manager::after {
+  content: '';
+}
+
 /* Sections */
 .property-modal-section {
   margin-bottom: 28px;
