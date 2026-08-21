@@ -8,7 +8,6 @@ const PortfolioPage = () => {
   const [properties, setProperties] = useState([]);
   const [selectedProperty, setSelectedProperty] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [showNetWorth, setShowNetWorth] = useState(false);
 
   useEffect(() => {
     const loadData = async () => {
@@ -24,17 +23,9 @@ const PortfolioPage = () => {
     loadData();
   }, []);
 
-  const totalInvestments = portfolio.reduce((sum, item) => {
-    if (item.currency === 'GBP') return sum + (item.current_value || 0);
-    return sum + ((item.current_value || 0) * 0.79); // rough USD to GBP
-  }, 0);
-
   const totalPropertyEquity = properties.reduce((sum, p) => sum + (p.equity || 0), 0);
   const totalPropertyValue = properties.reduce((sum, p) => sum + (p.current_value || 0), 0);
   const totalMortgage = properties.reduce((sum, p) => sum + (p.mortgage_remaining || 0), 0);
-  const totalNetWorth = totalInvestments + totalPropertyEquity;
-
-  const totalProfit = portfolio.reduce((sum, item) => sum + (item.profit_loss || 0), 0);
 
   if (loading) {
     return (
@@ -47,42 +38,9 @@ const PortfolioPage = () => {
   return (
     <div className="portfolio-container">
       <header className="portfolio-header">
-        <h1>MY WEALTH</h1>
-        <p>Full picture of your investments, property and net worth</p>
+        <h1>PORTFOLIO</h1>
+        <p>Your investments and property</p>
       </header>
-
-      {/* Net Worth Summary */}
-      <div className="net-worth-card">
-        <h2>
-          NET WORTH
-          <button 
-            className="net-worth-toggle-btn" 
-            onClick={() => setShowNetWorth(!showNetWorth)}
-            title={showNetWorth ? 'Hide net worth' : 'Show net worth'}
-          >
-            {showNetWorth ? '👁️' : '👁️‍🗨️'}
-          </button>
-        </h2>
-        <div className={`net-worth-visible ${!showNetWorth ? 'net-worth-hidden' : ''}`}>
-          <div className="net-worth-amount">£{totalNetWorth.toLocaleString('en-GB', { minimumFractionDigits: 2 })}</div>
-          <div className="net-worth-breakdown">
-            <div className="breakdown-item">
-              <span className="breakdown-label">Investments</span>
-              <span className="breakdown-value">£{totalInvestments.toLocaleString('en-GB', { minimumFractionDigits: 2 })}</span>
-            </div>
-            <div className="breakdown-item">
-              <span className="breakdown-label">Property Equity</span>
-              <span className="breakdown-value">£{totalPropertyEquity.toLocaleString('en-GB', { minimumFractionDigits: 2 })}</span>
-            </div>
-            <div className="breakdown-item">
-              <span className="breakdown-label">Total Profit</span>
-              <span className={`breakdown-value ${totalProfit >= 0 ? 'profit' : 'loss'}`}>
-                {totalProfit >= 0 ? '+' : ''}£{totalProfit.toLocaleString('en-GB', { minimumFractionDigits: 2 })}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Investments Section */}
       <div className="portfolio-section">

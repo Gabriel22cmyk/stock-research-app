@@ -8,6 +8,7 @@ const Nav = () => {
 
   const tabs = [
     { label: 'Portfolio', path: '/', icon: '💼' },
+    { label: 'Net Worth', path: '/networth', icon: '💰' },
     { label: 'Stocks', path: '/stocks', icon: '📈' },
     { label: 'Watchlist', path: '/watchlist', icon: '⭐' },
   ];
