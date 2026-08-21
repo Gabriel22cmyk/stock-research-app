@@ -82,7 +82,21 @@ const PortfolioPage = () => {
                   <span className="quick-label">Equity</span>
                   <span className="quick-value">£{prop.equity?.toLocaleString('en-GB')}</span>
                 </div>
+                {prop.monthly_income > 0 && (
+                  <div className="quick-stat">
+                    <span className="quick-label">Monthly Income</span>
+                    <span className="quick-value income">+£{prop.monthly_income?.toLocaleString('en-GB')}</span>
+                  </div>
+                )}
+                {prop.mortgage_remaining > 0 && (
+                  <div className="quick-stat">
+                    <span className="quick-label">Mortgage Left</span>
+                    <span className="quick-value mortgage">£{prop.mortgage_remaining?.toLocaleString('en-GB')}</span>
+                  </div>
+                )}
               </div>
+
+              {prop.notes && <p className="property-notes">{prop.notes}</p>}
 
               <p className="property-click-hint">View details →</p>
             </div>
