@@ -104,25 +104,24 @@ const PortfolioPage = () => {
                 {prop.owned_outright && <span className="owned-badge">OWNED OUTRIGHT</span>}
               </div>
 
-              <div className="property-details">
-                <div className="property-row">
-                  <span>Value</span>
-                  <span className="property-amount">£{prop.current_value?.toLocaleString('en-GB')}</span>
+              {prop.location && (
+                <div className="property-location">
+                  📍 {prop.location}
                 </div>
-                <div className="property-row">
-                  <span>Equity</span>
-                  <span className="property-amount equity">£{prop.equity?.toLocaleString('en-GB')}</span>
+              )}
+
+              <div className="property-quick-stats">
+                <div className="quick-stat">
+                  <span className="quick-label">Value</span>
+                  <span className="quick-value">£{prop.current_value?.toLocaleString('en-GB')}</span>
                 </div>
-                {prop.mortgage_remaining > 0 && (
-                  <div className="property-row">
-                    <span>Mortgage</span>
-                    <span className="property-amount mortgage">-£{prop.mortgage_remaining?.toLocaleString('en-GB')}</span>
-                  </div>
-                )}
+                <div className="quick-stat">
+                  <span className="quick-label">Equity</span>
+                  <span className="quick-value">£{prop.equity?.toLocaleString('en-GB')}</span>
+                </div>
               </div>
 
-              {prop.notes && <p className="property-notes">{prop.notes}</p>}
-              <p className="property-click-hint">Click for details →</p>
+              <p className="property-click-hint">View details →</p>
             </div>
           ))}
         </div>
