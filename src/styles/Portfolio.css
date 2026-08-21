@@ -146,6 +146,38 @@
   font-size: 0.9em;
 }
 
+.property-tile-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.tile-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tile-stat-label {
+  font-size: 0.68em;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.tile-stat-value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.35em;
+  color: #f0f4f8;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+.tile-stat-value.mortgage {
+  color: #ef4444;
+}
+
 .property-tile-arrow {
   margin-top: auto;
   color: #60a5fa;

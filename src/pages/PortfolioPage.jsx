@@ -45,14 +45,6 @@ const PortfolioPage = () => {
           <span className="summary-value">{properties.length}</span>
         </div>
         <div className="summary-tile">
-          <span className="summary-label">Total Value</span>
-          <span className="summary-value">£{totalPropertyValue.toLocaleString('en-GB')}</span>
-        </div>
-        <div className="summary-tile">
-          <span className="summary-label">Total Equity</span>
-          <span className="summary-value">£{totalPropertyEquity.toLocaleString('en-GB')}</span>
-        </div>
-        <div className="summary-tile">
           <span className="summary-label">Monthly Income</span>
           <span className="summary-value income">£{totalMonthlyIncome.toLocaleString('en-GB', { minimumFractionDigits: 2 })}</span>
         </div>
@@ -60,12 +52,6 @@ const PortfolioPage = () => {
           <div className="summary-tile">
             <span className="summary-label">Monthly Mortgage</span>
             <span className="summary-value mortgage">£{totalMonthlyMortgage.toLocaleString('en-GB', { minimumFractionDigits: 2 })}</span>
-          </div>
-        )}
-        {totalMortgage > 0 && (
-          <div className="summary-tile">
-            <span className="summary-label">Total Mortgage</span>
-            <span className="summary-value mortgage">£{totalMortgage.toLocaleString('en-GB')}</span>
           </div>
         )}
       </div>
@@ -84,6 +70,22 @@ const PortfolioPage = () => {
             {prop.location && (
               <p className="property-tile-location">📍 {prop.location}</p>
             )}
+            <div className="property-tile-stats">
+              <div className="tile-stat">
+                <span className="tile-stat-label">Value</span>
+                <span className="tile-stat-value">£{prop.current_value?.toLocaleString('en-GB')}</span>
+              </div>
+              <div className="tile-stat">
+                <span className="tile-stat-label">Equity</span>
+                <span className="tile-stat-value">£{prop.equity?.toLocaleString('en-GB')}</span>
+              </div>
+              {prop.mortgage_remaining > 0 && (
+                <div className="tile-stat">
+                  <span className="tile-stat-label">Mortgage</span>
+                  <span className="tile-stat-value mortgage">£{prop.mortgage_remaining?.toLocaleString('en-GB')}</span>
+                </div>
+              )}
+            </div>
             <div className="property-tile-arrow">View details →</div>
           </button>
         ))}
