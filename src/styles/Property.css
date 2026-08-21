@@ -1,19 +1,20 @@
 .property-page-container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 32px 24px 64px;
 }
 
 .back-btn {
   background: none;
   border: none;
   color: #60a5fa;
-  font-size: 1em;
+  font-size: 0.95em;
   font-weight: 600;
   cursor: pointer;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
   transition: color 0.2s;
-  padding: 8px 12px;
+  padding: 8px 0;
+  letter-spacing: 0.5px;
 }
 
 .back-btn:hover {
@@ -23,17 +24,17 @@
 /* Header */
 .property-page-header {
   margin-bottom: 40px;
-  padding-bottom: 30px;
-  border-bottom: 3px solid #2563eb;
+  padding-bottom: 28px;
+  border-bottom: 2px solid #1e3a5f;
 }
 
 .property-page-header h1 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 3.5em;
+  font-size: 3em;
   color: #60a5fa;
   letter-spacing: 3px;
-  margin: 0 0 12px 0;
-  line-height: 1;
+  margin: 0 0 14px 0;
+  line-height: 1.05;
 }
 
 .owned-badge {
@@ -68,17 +69,17 @@
 
 /* Sections */
 .property-section {
-  margin-bottom: 35px;
+  margin-bottom: 36px;
 }
 
 .property-section h2 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.8em;
+  font-size: 1.5em;
   color: #60a5fa;
-  letter-spacing: 2px;
-  margin: 0 0 18px 0;
-  padding-bottom: 12px;
-  border-bottom: 2px solid #1e3a5f;
+  letter-spacing: 2.5px;
+  margin: 0 0 16px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #1e3a5f;
 }
 
 /* Address Block */
@@ -152,19 +153,21 @@
 /* Stats Grid */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
 }
 
 .stat-card {
   background: #1a2744;
   border: 1px solid #2563eb;
   border-radius: 12px;
-  padding: 20px;
+  padding: 20px 16px;
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  min-height: 96px;
+  justify-content: center;
 }
 
 .stat-label {
@@ -177,9 +180,10 @@
 
 .stat-value {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 2em;
+  font-size: 1.9em;
   letter-spacing: 1px;
   color: #f0f4f8;
+  line-height: 1;
 }
 
 .stat-value.positive { color: #10b981; }
