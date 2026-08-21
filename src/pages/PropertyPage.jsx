@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { fetchProperties } from '../lib/supabaseClient';
+import FileSection from '../components/FileSection';
 import '../styles/Property.css';
 
 const PropertyPage = () => {
@@ -179,6 +180,17 @@ const PropertyPage = () => {
           </div>
         </section>
       )}
+
+      {/* Documents & Files */}
+      <section className="property-section">
+        <h2>DOCUMENTS</h2>
+        <div className="file-sections-stack">
+          <FileSection propertyId={property.id} folder="important" title="IMPORTANT FILES" icon="⭐" />
+          <FileSection propertyId={property.id} folder="2026" title="2026 STATEMENTS" icon="📁" />
+          <FileSection propertyId={property.id} folder="2025" title="2025 STATEMENTS" icon="📁" />
+          <FileSection propertyId={property.id} folder="2024" title="2024 STATEMENTS" icon="📁" />
+        </div>
+      </section>
 
       {/* Utilities */}
       {(property.electricity_provider || property.gas_provider || property.water_provider) && (
