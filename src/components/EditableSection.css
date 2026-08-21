@@ -1,13 +1,13 @@
 .section-header-with-edit {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 16px;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0;
 }
 
 .section-header-with-edit h2 {
-  margin: 0;
+  margin: 0 0 16px 0;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.5em;
   color: #60a5fa;
@@ -15,6 +15,7 @@
   padding-bottom: 10px;
   border-bottom: 1px solid #1e3a5f;
   flex: 1;
+  width: 100%;
 }
 
 .edit-btn {
@@ -28,7 +29,8 @@
   font-weight: 600;
   transition: all 0.2s;
   white-space: nowrap;
-  margin-top: 0;
+  align-self: flex-start;
+  margin-top: 22px;
 }
 
 .edit-btn:hover {
@@ -80,12 +82,14 @@
   flex-direction: column;
   gap: 14px;
   margin-top: 16px;
+  max-width: 100%;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
+  text-align: left;
 }
 
 .form-group label {
@@ -94,20 +98,21 @@
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 .form-group input {
   background: #0f1419;
   border: 1px solid #2d3748;
   border-radius: 8px;
-  padding: 12px 14px;
+  padding: 10px 12px;
   color: #f0f4f8;
   font-size: 0.95em;
   font-family: inherit;
   transition: border-color 0.2s;
   width: 100%;
   box-sizing: border-box;
+  text-align: left;
 }
 
 .form-group input:focus {
@@ -132,7 +137,8 @@
 .form-actions {
   display: flex;
   gap: 10px;
-  margin-top: 8px;
+  margin-top: 16px;
+  justify-content: flex-start;
 }
 
 .form-btn {
